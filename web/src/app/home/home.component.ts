@@ -8,7 +8,7 @@ import {StudentService} from '../services/student.service';
 })
 export class HomeComponent implements OnInit {
   public students: Student[];
-
+  public selectedStudent: Student = null;
   constructor(private studentService: StudentService) {
   }
 
@@ -20,5 +20,9 @@ export class HomeComponent implements OnInit {
     this.studentService.getStudents().subscribe(students => {
       this.students = students;
     });
+  }
+
+  showInfo = (id: number) => {
+    this.selectedStudent = this.students.find(index => index.id === id);
   }
 }

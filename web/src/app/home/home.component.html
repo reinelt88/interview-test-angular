@@ -14,7 +14,7 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let student of students">
+      <tr *ngFor="let student of students" (click)="showInfo(student.id)" style="cursor: pointer">
         <td>{{ student.FirstName }}</td>
         <td>{{ student.LastName }}</td>
         <td>{{ student.Email }}</td>
@@ -24,6 +24,6 @@
     </table>
   </div>
   <div class="col-4">
-    <app-student-detail></app-student-detail>
+    <app-student-detail [selectedStudent]="selectedStudent"></app-student-detail>
   </div>
 </div>
