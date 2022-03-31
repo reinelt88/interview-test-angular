@@ -20,7 +20,7 @@ Please enter/replace your details below.
 | Name | Reinel Torres |
 | Date | 2022-03-30 |
 | Start Time | 17:39:59 -06:00 |
-| Finish Time | 17:36:00 -06:00 |
+| Finish Time | 19:36:00 -06:00 |
 
 ## Requirements
 In order to complete this test you will need the following tools:
