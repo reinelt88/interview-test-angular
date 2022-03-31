@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Student} from '../models/student';
-import {StudentService} from "../services/student.service";
+import {StudentService} from '../services/student.service';
 
 @Component({
   selector: 'app-student-detail',
@@ -10,6 +10,8 @@ import {StudentService} from "../services/student.service";
 export class StudentDetailComponent implements OnInit {
 
   @Input() selectedStudent: Student = <Student>{};
+  @Output() errorMessage: EventEmitter<string> = new EventEmitter();
+  @Output() success: EventEmitter<boolean> = new EventEmitter();
   constructor(
     private studentService: StudentService
   ) { }
@@ -27,17 +29,23 @@ export class StudentDetailComponent implements OnInit {
       this.studentService.updateStudent(this.selectedStudent).subscribe(result => {
         if (result) {
           this.clearStudent();
+          this.success.emit(true);
+        } else {
+          this.errorMessage.emit('Error updating student');
         }
       }, error => {
-        console.log(error);
+        this.errorMessage.emit(error);
       });
     } else {
       this.studentService.createStudent(this.selectedStudent).subscribe(result => {
         if (result) {
           this.clearStudent();
+          this.success.emit(true);
+        } else {
+          this.errorMessage.emit('Error creating student');
         }
       }, error => {
-        console.log(error);
+        this.errorMessage.emit(error);
       });
     }
   }
@@ -45,8 +53,9 @@ export class StudentDetailComponent implements OnInit {
   removeStudent = () => {
     this.studentService.removeStudent(this.selectedStudent).subscribe(() => {
       this.clearStudent();
+      this.success.emit(true);
     }, error => {
-      console.log(error);
+      this.errorMessage.emit(error);
     });
   }
 
