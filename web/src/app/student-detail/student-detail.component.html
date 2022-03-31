@@ -22,6 +22,8 @@
       <label for="email">Major</label>
       <input type="number" class="form-control" id="major" [(ngModel)]="selectedStudent.Major" [ngModelOptions]="{standalone: true}">
     </div>
+    <button type="submit" class="btn btn-primary" (click)="createOrUpdate()">{{ selectedStudent.id ? 'Edit' : 'Create' }}</button>
+    <button type="submit" class="btn btn-danger ml-2" (click)="removeStudent()" *ngIf="selectedStudent.id">Delete</button>
     <button type="submit" class="btn btn-secondary ml-2" (click)="clearStudent()">Clear</button>
   </form>
 </div>
