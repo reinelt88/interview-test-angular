@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Student} from '../models/student';
 
 @Component({
   selector: 'app-home',
@@ -13,12 +14,4 @@ export class HomeComponent {
       this.students = result;
     }, error => console.error(error));
   }
-}
-
-interface Student {
-  id: number;
-  FirstName: string;
-  LastName: string;
-  Email: string;
-  Major: string;
 }
