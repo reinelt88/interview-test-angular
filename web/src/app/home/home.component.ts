@@ -34,4 +34,15 @@ export class HomeComponent implements OnInit {
     this.showSuccessMessage = true;
     this.loadStudents();
   }
+
+  getBarColor = (input: string) => {
+    const percent = Number(input);
+    if (percent > 80) {
+      return 'bg-success';
+    } else if (percent > 50 && percent < 80) {
+      return 'bg-warning';
+    } else if (percent < 50) {
+      return 'bg-danger';
+    }
+  }
 }

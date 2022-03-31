@@ -26,7 +26,14 @@
         <td>{{ student.FirstName }}</td>
         <td>{{ student.LastName }}</td>
         <td>{{ student.Email }}</td>
-        <td>{{ student.Major }}</td>
+        <td>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped active {{getBarColor(student.Major)}}" role="progressbar"
+                 [attr.aria-valuenow]="student.Major" [style.width]="student.Major+'%'" aria-valuemin="0" aria-valuemax="100" >
+              {{student.Major}}%
+            </div>
+          </div>
+        </td>
       </tr>
       </tbody>
     </table>

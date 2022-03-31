@@ -7,11 +7,11 @@
 <div class="mt-4">
   <form>
     <div class="form-group">
-      <label for="firstName">First name</label>
+      <label for="firstName">First Name</label>
       <input type="text" class="form-control" id="firstName" [(ngModel)]="selectedStudent.FirstName" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="form-group">
-      <label for="lastName">Last name</label>
+      <label for="lastName">Last Name</label>
       <input type="text" class="form-control" id="lastName" [(ngModel)]="selectedStudent.LastName" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="form-group">
@@ -19,7 +19,7 @@
       <input type="text" class="form-control" id="email" [(ngModel)]="selectedStudent.Email" [ngModelOptions]="{standalone: true}">
     </div>
     <div class="form-group">
-      <label for="email">Major</label>
+      <label for="email">Major (%)</label>
       <input type="number" class="form-control" id="major" [(ngModel)]="selectedStudent.Major" [ngModelOptions]="{standalone: true}">
     </div>
     <button type="submit" class="btn btn-primary" (click)="createOrUpdate()">{{ selectedStudent.id ? 'Edit' : 'Create' }}</button>
