@@ -22,5 +22,6 @@
       <label for="email">Major</label>
       <input type="number" class="form-control" id="major" [(ngModel)]="selectedStudent.Major" [ngModelOptions]="{standalone: true}">
     </div>
+    <button type="submit" class="btn btn-secondary ml-2" (click)="clearStudent()">Clear</button>
   </form>
 </div>

@@ -14,4 +14,8 @@ export class StudentDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  clearStudent = () => {
+    this.selectedStudent = <Student>{};
+  }
+
 }
