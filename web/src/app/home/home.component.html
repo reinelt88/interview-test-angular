@@ -18,6 +18,8 @@
         <th>Last Name</th>
         <th>Email</th>
         <th>Major</th>
+        <th>Score</th>
+        <th>Grade</th>
       </tr>
       </thead>
       <tbody>
@@ -26,11 +28,13 @@
         <td>{{ student.FirstName }}</td>
         <td>{{ student.LastName }}</td>
         <td>{{ student.Email }}</td>
+        <td>{{ student.Major }}</td>
+        <td>{{ student.Grade }}</td>
         <td>
           <div class="progress">
-            <div class="progress-bar progress-bar-striped active {{getBarColor(student.Major)}}" role="progressbar"
-                 [attr.aria-valuenow]="student.Major" [style.width]="student.Major+'%'" aria-valuemin="0" aria-valuemax="100" >
-              {{student.Major}}%
+            <div class="progress-bar progress-bar-striped active {{getBarColor(student.Score)}}" role="progressbar"
+                 [attr.aria-valuenow]="student.Score" [style.width]="student.Score+'%'" aria-valuemin="0" aria-valuemax="100" >
+              {{student.Score}}%
             </div>
           </div>
         </td>

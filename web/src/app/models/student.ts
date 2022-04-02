@@ -4,4 +4,6 @@ export interface Student {
   LastName: string;
   Email: string;
   Major: string;
+  Score: string;
+  Grade: string;
 }

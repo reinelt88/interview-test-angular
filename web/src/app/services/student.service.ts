@@ -23,21 +23,21 @@ export class StudentService {
   }
 
   createStudent(student: Student): Observable<any> {
-    return this.http.post<Student>(`${this.baseUrl}/students/`, student)
+    return this.http.post<Student>(`${this.baseUrl}/students/create/`, student)
       .pipe(
         catchError(this.handleError<Student>('addStudent'))
       );
   }
 
   updateStudent(student: Student): Observable<any> {
-    return this.http.put<Student>(`${this.baseUrl}/students/${student.id}/`, student)
+    return this.http.put<Student>(`${this.baseUrl}/students/update/${student.id}/`, student)
       .pipe(
         catchError(this.handleError<Student>('updateStudent'))
       );
   }
 
   removeStudent(student: Student): Observable<any> {
-    return this.http.delete<Student>(`${this.baseUrl}/students/${student.id}/`)
+    return this.http.delete<Student>(`${this.baseUrl}/students/delete/${student.id}/`)
       .pipe(
         catchError(this.handleError<Student>('removeStudent'))
       );
